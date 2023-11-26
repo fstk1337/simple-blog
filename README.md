@@ -1,2 +1,2 @@
 # simple-blog
-Simple Blog React App
+Simple designed blog React Application
