@@ -5,7 +5,7 @@ import post4 from '@images/banner-item-04.jpg';
 import post5 from '@images/banner-item-05.jpg';
 import post6 from '@images/banner-item-06.jpg';
 
-export interface Post {
+export interface Slide {
   id: number;
   topic: string;
   title: string;
@@ -15,7 +15,7 @@ export interface Post {
   comments: number;
 }
 
-export const posts:Post[] = [
+export const slides:Slide[] = [
   {
     id: 1,
     topic: 'fashion',

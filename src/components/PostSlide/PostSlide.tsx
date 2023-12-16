@@ -3,8 +3,8 @@ import { FC } from 'react';
 import { PostSlideProps } from './PostSlideProps';
 import style from './PostSlide.module.scss';
 
-export const PostSlide:FC<PostSlideProps> = ({ post }) => {
-  const { topic, title, author, date, image, comments } = post;
+export const PostSlide:FC<PostSlideProps> = ({ slide }) => {
+  const { topic, title, author, date, image, comments } = slide;
 
   return (
     <div className={style.postSlide}>

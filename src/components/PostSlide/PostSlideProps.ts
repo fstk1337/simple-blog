@@ -1,5 +1,5 @@
-import { Post } from "@/constants/posts";
+import { Slide } from "@/constants/slides";
 
 export interface PostSlideProps {
-  post: Post;
+  slide: Slide;
 }

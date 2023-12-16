@@ -1,0 +1,23 @@
+.homeContent {
+  display: block;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  padding: 100px 0;
+}
+
+.mainColumn {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 3 * 2);
+  padding: 0 15px;
+}
+
+.sideColumn {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 3);
+  padding: 0 15px;
+}

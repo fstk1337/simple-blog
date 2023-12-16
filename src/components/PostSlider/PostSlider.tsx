@@ -6,14 +6,14 @@ import 'swiper/css/navigation';
 
 import { PostSlide } from '@components/PostSlide';
 import style from './PostSlider.module.scss';
-import { posts } from '@/constants/posts';
+import { slides } from '@/constants/slides';
 import { useWindowSize } from '@hooks/useWindowSize';
 
 export const PostSlider = () => {
   const { width } = useWindowSize();
 
   return (
-    <div className={style.postSlider}>
+    <section className={style.postSlider}>
       <div className={style.content}>
         <Swiper
           modules={[Navigation]}
@@ -22,13 +22,13 @@ export const PostSlider = () => {
           spaceBetween={10}
           loop={true}
         >
-          {posts.map(post =>
-            <SwiperSlide key={post.id}>
-              <PostSlide post={post} />
+          {slides.map(slide =>
+            <SwiperSlide key={slide.id}>
+              <PostSlide slide={slide} />
             </SwiperSlide>
           )}
         </Swiper>
       </div>
-    </div>
+    </section>
   );
 }
