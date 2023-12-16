@@ -10,3 +10,9 @@ html, body {
   font-size: 16px;
   line-height: 150%;
 }
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
