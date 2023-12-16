@@ -1,11 +1,15 @@
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import { Container } from "@layout/Container";
 
-import style from './Header.module.scss';
+import style from "./Header.module.scss";
+import burger from "@icons/burger.svg";
+import { links } from "@/constants/links";
 
 export const Header = () => {
   const path = useLocation().pathname;
+  const [showBurgerMenu, setShowBurgerMenu] = useState(false);
 
   return (
     <header className={style.header}>
@@ -13,12 +17,20 @@ export const Header = () => {
         <div className={style.headerContent}>
           <a href="/" className={style.logo}>Leet Hub<span>.</span></a>
           <nav className={style.navigation}>
-            <Link to="/" className={style.navLink + (path === '/' ? ' ' + style.navLinkActive : '')}>Home</Link>
-            <Link to="/about" className={style.navLink + (path === '/about' ? ' ' + style.navLinkActive : '')}>About Us</Link>
-            <Link to="/blog" className={style.navLink + (path === '/blog' ? ' ' + style.navLinkActive : '')}>Blog Entries</Link>
-            <Link to="/post" className={style.navLink + (path === '/post' ? ' ' + style.navLinkActive : '')}>Post Details</Link>
-            <Link to="/contact" className={style.navLink + (path === '/contact' ? ' ' + style.navLinkActive : '')}>Contact Us</Link>
+            <div className={style.burger} onClick={() => setShowBurgerMenu(!showBurgerMenu)}>
+              <img src={burger} alt="=" />
+            </div>
+            {links.map(link => 
+              <Link key={link.id} to={link.to} className={style.navLink + (path === link.to ? ' ' + style.navLinkActive : '')}>{link.name}</Link>
+            )}
           </nav>
+          <ul className={style.burgerMenu + (showBurgerMenu ? ' ' + style.show : '')}>
+          {links.map(link =>
+            <li key={link.id} className={style.burgerItem}>
+              <Link to={link.to} onClick={() => setShowBurgerMenu(false)} className={style.burgerLink + (path === link.to ? ' ' + style.burgerLinkActive : '')}>{link.name}</Link>
+            </li>
+          )}
+          </ul>
         </div>
       </Container>
     </header>
