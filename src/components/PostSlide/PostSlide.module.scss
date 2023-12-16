@@ -1,7 +1,6 @@
 .postSlide {
   display: flex;
   position: relative;
-  min-width: calc((100vw - 40px) / 3);
 }
 
 .postImage {
@@ -16,7 +15,6 @@
   position: absolute;
   bottom: 40px;
   left: 40px;
-  width: 100%;
   color: #fff;
 }
 
@@ -33,6 +31,7 @@
   letter-spacing: 0.5px;
   text-transform: capitalize;
   margin: 10px 0 12px 0;
+  min-height: 48px;
 }
 
 .postInfo {

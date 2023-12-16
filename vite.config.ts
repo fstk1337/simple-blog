@@ -20,6 +20,7 @@ export default defineConfig({
       '@app': path.resolve(__dirname, './src/app'),
       '@components': path.resolve(__dirname, './src/components'),
       '@constants': path.resolve(__dirname, './src/constants'),
+      '@hooks': path.resolve(__dirname, './src/hooks'),
       '@icons': path.resolve(__dirname, './src/assets/icons'),
       '@images': path.resolve(__dirname, './src/assets/images'),
       '@layout': path.resolve(__dirname, './src/layout'),
