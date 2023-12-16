@@ -6,7 +6,7 @@ import { Container } from "@layout/Container";
 import style from "./Header.module.scss";
 import burger from "@icons/burger.svg";
 import close from "@icons/close.svg";
-import { links } from "@/constants/links";
+import { routes } from "@/constants/routes";
 
 export const Header = () => {
   const path = useLocation().pathname;
@@ -21,14 +21,14 @@ export const Header = () => {
             <div className={style.burger} onClick={() => setShowBurgerMenu(!showBurgerMenu)}>
               <img src={showBurgerMenu ? close : burger} alt="=" />
             </div>
-            {links.map(link => 
+            {routes.map(link => 
               <Link key={link.id} to={link.to} className={style.navLink + (path === link.to ? ' ' + style.navLinkActive : '')}>{link.name}</Link>
             )}
           </nav>
           <div className={style.burgerMenu + (showBurgerMenu ? ' ' + style.show : '')}>
             <Container>
               <ul>
-              {links.map(link =>
+              {routes.map(link =>
                 <li key={link.id} className={style.burgerItem}>
                   <Link to={link.to} onClick={() => setShowBurgerMenu(false)} className={style.burgerLink + (path === link.to ? ' ' + style.burgerLinkActive : '')}>{link.name}</Link>
                 </li>
