@@ -1,0 +1,41 @@
+.postSlide {
+  display: flex;
+  position: relative;
+  min-width: calc((100vw - 40px) / 3);
+}
+
+.postImage {
+  width: 100%;
+  height: auto;
+}
+
+.postText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  width: 100%;
+  color: #fff;
+}
+
+.topic {
+  font-size: 18px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #f48840;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+  margin: 10px 0 12px 0;
+}
+
+.postInfo {
+  font-size: 14px;
+  font-weight: 500;
+}

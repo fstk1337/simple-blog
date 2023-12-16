@@ -1,0 +1,13 @@
+.postSlider {
+  display: block;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  column-gap: 10px;
+  padding: 10px;
+}

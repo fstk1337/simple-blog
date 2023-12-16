@@ -1,0 +1,1 @@
+export { PostSlider } from './PostSlider';

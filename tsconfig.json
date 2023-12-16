@@ -7,6 +7,7 @@
       "@components/*": ["src/components/*"],
       "@constants/*": ["src/constants/*"],
       "@icons/*": ["src/assets/icons/*"],
+      "@images/*": ["src/assets/images/*"],
       "@layout/*":["src/layout/*"],
       "@pages/*":["src/pages/*"],
       "@styles/*": ["src/styles/*"]
