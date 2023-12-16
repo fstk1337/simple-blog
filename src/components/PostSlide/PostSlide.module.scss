@@ -1,6 +1,11 @@
 .postSlide {
   display: flex;
   position: relative;
+  transition: all .2s linear;
+}
+
+.postSlide:hover {
+  filter: opacity(70%);
 }
 
 .postImage {
@@ -16,6 +21,7 @@
   bottom: 40px;
   left: 40px;
   color: #fff;
+  cursor: pointer;
 }
 
 .topic {
