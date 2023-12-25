@@ -1,5 +1,7 @@
 import { FC } from 'react';
 
+import { PostDetails } from '@components/PostDetails';
+
 import { PostCardProps } from './PostCardProps';
 import style from './PostCard.module.scss';
 import tagsIcon from '@icons/tags.svg';
@@ -15,17 +17,16 @@ export const PostCard:FC<PostCardProps> = ({ card }) => {
       <div className={style.postInfo}>
         <div className={style.postText}>
           <div className={style.topic}>{topic}</div>
-          <h3 className={style.title}>{title}</h3>
-          <div className={style.postDetails}>
-            <span>{author}&nbsp;</span>|<span>&nbsp;{date}&nbsp;</span>|<span>&nbsp;{comments} Comments</span>
-          </div>
+          <a href="#"><h3 className={style.title}>{title}</h3></a>
+          <PostDetails author={author} date={date} comments={comments} />
         </div>
         <div className={style.postDescription}>
           <p>{description}</p>
         </div>
         <div className={style.postTags}>
           <img src={tagsIcon} alt='tags' />
-          {tags[0]}, {tags[1]}
+          <a href="#">{tags[0]}</a>,&nbsp;
+          <a href="#">{tags[1]}</a>
         </div>
       </div>
     </div>

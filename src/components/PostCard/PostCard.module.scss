@@ -2,9 +2,18 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
+  transition: all .3s linear;
+  border: 1px solid #eee;
+  &:hover {
+    border-color: #f48840;
+  }
+  &:hover > .postImage {
+    filter: opacity(70%);
+  }
 }
 .postImage {
   width: 100%;
+  transition: all .3s linear;
 }
 
 .postImage img {
@@ -15,15 +24,13 @@
 
 .postInfo {
   padding: 40px;
-  border: 1px solid #eee;
-  border-top: none;
 }
 
 .postText {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  cursor: pointer;
+  color: #aaa;
 }
 
 .topic {
@@ -32,6 +39,10 @@
   font-weight: 900;
   text-transform: uppercase;
   color: #f48840;
+}
+
+.postText a {
+  text-decoration: none;
 }
 
 .title {
@@ -70,9 +81,16 @@
   font-size: 14px;
   font-weight: 400;
   color: #aaa;
+  a {
+    text-decoration: none;
+    color: #aaa;
+    transition: all .2s linear;
+    &:hover {
+      color: #f48840;
+    }
+  }
 }
 
 .postTags img {
   margin-right: 10px;
 }
-
