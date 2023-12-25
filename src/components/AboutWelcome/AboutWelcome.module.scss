@@ -1,3 +1,36 @@
 .aboutWelcome {
   display: block;
+  padding: 10px;
+}
+
+.welcomeBack {
+  padding: 120px 0;
+  background-image: url('../../assets/images/heading-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.welcomeHeading {
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 120%;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #f48840;  
+}
+
+.welcomeText {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 120%;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #fff;
 }
