@@ -6,7 +6,7 @@ import 'swiper/css/navigation';
 
 import { PostSlide } from '@components/PostSlide';
 import style from './PostSlider.module.scss';
-import { slides } from '@/constants/slides';
+import { slides } from '@constants/slides';
 import { useWindowSize } from '@hooks/useWindowSize';
 
 export const PostSlider = () => {

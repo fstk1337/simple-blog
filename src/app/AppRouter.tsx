@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import { Layout } from "@/layout/Layout";
-import { AboutPage, BlogPage, ContactPage, HomePage, PostPage } from "@/pages";
+import { Layout } from "@layout/Layout";
+import { AboutPage, BlogPage, ContactPage, HomePage, PostPage } from "@pages";
 
 
 export const AppRouter = () => {

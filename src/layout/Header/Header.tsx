@@ -6,7 +6,7 @@ import { Container } from "@layout/Container";
 import style from "./Header.module.scss";
 import burger from "@icons/burger.svg";
 import close from "@icons/close.svg";
-import { routes } from "@/constants/routes";
+import { routes } from "@constants/routes";
 
 export const Header = () => {
   const path = useLocation().pathname;

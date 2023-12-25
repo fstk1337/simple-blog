@@ -1,5 +1,11 @@
+import { AboutContent } from "@components/AboutContent";
+import { AboutWelcome } from "@components/AboutWelcome";
+
 export const AboutPage = () => {
   return (
-    <main>About Us</main>
+    <main>
+      <AboutWelcome />
+      <AboutContent />
+    </main>
   );
 }
