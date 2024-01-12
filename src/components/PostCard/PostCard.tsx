@@ -6,7 +6,7 @@ import { PostCardProps } from './PostCardProps';
 import style from './PostCard.module.scss';
 import tagsIcon from '@icons/tags.svg';
 
-export const PostCard:FC<PostCardProps> = ({ card }) => {
+export const PostCard:FC<PostCardProps> = ({ card, isShort }) => {
   const { topic, title, author, image, date, comments, description, tags } = card;
 
   return (
@@ -21,7 +21,7 @@ export const PostCard:FC<PostCardProps> = ({ card }) => {
           <PostDetails author={author} date={date} comments={comments} />
         </div>
         <div className={style.postDescription}>
-          <p>{description}</p>
+          <p className={isShort ? style.shortened : undefined}>{description}</p>
         </div>
         <div className={style.postTags}>
           <img src={tagsIcon} alt='tags' />

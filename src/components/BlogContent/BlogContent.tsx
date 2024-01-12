@@ -2,22 +2,21 @@ import { Container } from '@layout/Container';
 import { PostCard } from '@components/PostCard';
 import { Sidebar } from '@components/Sidebar';
 
-import style from './HomeContent.module.scss';
-
-import { Link } from 'react-router-dom';
-
 import { cards } from '@constants/cards';
 
-export const HomeContent = () => {
+import style from './BlogContent.module.scss';
+
+export const BlogContent = () => {
   return (
-    <section className={style.homeContent}>
+    <section className={style.blogContent}>
       <Container>
         <div className={style.content}>
           <div className={style.mainColumn}>
             {cards.map(card =>
-              <PostCard key={card.id} card={card} />
+              <div key={card.id} className={style.cardWrapper}>
+                <PostCard card={card} isShort={true} />
+            </div>
             )}
-            <Link to="/blog" className={style.viewPostsBtn}>View all posts</Link>
           </div>
           <div className={style.sideColumn}>
             <Sidebar />

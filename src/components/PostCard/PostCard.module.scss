@@ -63,16 +63,25 @@
 
 .postDescription {
   margin: 25px 0;
+  padding: 25px 0;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
 }
 
 .postDescription p {
-  padding: 25px 0;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
   font-size: 15px;
   font-weight: 400;
   color: #7a7a7a;
   line-height: 30px;
+  &.shortened {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
 }
 
 .postTags {

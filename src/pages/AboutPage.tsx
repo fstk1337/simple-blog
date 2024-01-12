@@ -1,10 +1,10 @@
 import { AboutContent } from "@components/AboutContent";
-import { AboutWelcome } from "@components/AboutWelcome";
+import { Welcome } from "@components/Welcome";
 
 export const AboutPage = () => {
   return (
     <main>
-      <AboutWelcome />
+      <Welcome heading='About us' text='More about us!' />
       <AboutContent />
     </main>
   );
