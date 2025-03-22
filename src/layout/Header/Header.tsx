@@ -16,7 +16,10 @@ export const Header = () => {
     <header className={style.header}>
       <Container>
         <div className={style.headerContent}>
-          <a href="/" className={style.logo}>Cozy Space<span>.</span></a>
+          <a href="/" className={style.logo}>
+            {path === '/' && <>C<span>oz</span>y S<span>pac</span>e<span className={style.dot}>.</span></>}
+            {path !== '/' && <>Cozy Space<span className={style.dot}>.</span></>}
+          </a>
           <nav className={style.navigation}>
             <div className={style.burger} onClick={() => setShowBurgerMenu(!showBurgerMenu)}>
               <img src={showBurgerMenu ? close : burger} alt="=" />
