@@ -16,7 +16,7 @@ export const Header = () => {
     <header className={style.header}>
       <Container>
         <div className={style.headerContent}>
-          <a href="/" className={style.logo}>Leet Hub<span>.</span></a>
+          <a href="/" className={style.logo}>Cozy Space<span>.</span></a>
           <nav className={style.navigation}>
             <div className={style.burger} onClick={() => setShowBurgerMenu(!showBurgerMenu)}>
               <img src={showBurgerMenu ? close : burger} alt="=" />
