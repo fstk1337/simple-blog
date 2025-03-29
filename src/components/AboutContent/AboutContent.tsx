@@ -22,7 +22,7 @@ export const AboutContent = () => {
             <ul className={style.socialList}>
               {socials.map(social =>
                 <li key={social.id} className={style.socialItem}>
-                  <a href={social.href} target='_blank'>
+                  <a href={social.href} target='_blank' rel='noreferrer'>
                     <div className={style.socialIcon}>
                       <img src={social.icon} alt={social.name} />
                     </div>

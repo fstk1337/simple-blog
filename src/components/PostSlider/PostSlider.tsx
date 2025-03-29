@@ -20,7 +20,7 @@ export const PostSlider = () => {
           navigation
           slidesPerView={width >= 2048 ? 5 : (width >= 1600 ? 4 : (width >= 992 ? 3 : (width < 640 ? 1 : 2)))}
           spaceBetween={10}
-          loop={true}
+          loop={false}
           grabCursor={true}
         >
           {slides.map(slide =>
