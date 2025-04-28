@@ -1,6 +1,6 @@
-import { Card } from "@constants/cards";
+import { PostDto } from "@app/api/post-cards";
 
 export interface PostCardProps {
-  card: Card;
+  card: PostDto;
   isShort?: boolean;
 }

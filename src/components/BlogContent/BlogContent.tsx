@@ -2,18 +2,21 @@ import { Container } from '@layout/Container';
 import { PostCard } from '@components/PostCard';
 import { Sidebar } from '@components/Sidebar';
 
-import { cards } from '@constants/cards';
-
 import style from './BlogContent.module.scss';
 import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 
+import { useQuery } from '@tanstack/react-query';
+import { postCardsApi } from '@app/api/post-cards';
+
 
 export const BlogContent = () => {
+  const query = useQuery({ queryKey: ['cards'], queryFn: postCardsApi.getPostCards});
+  
   const [page, setPage] = useState(0);
-  const [posts] = useState(cards);
+  const posts = query.data || [];
   const postsPerPage = 6;
-  const totalPages = Math.ceil(cards.length / postsPerPage);
+  const totalPages = Math.ceil(posts.length / postsPerPage);
 
   const displayPosts = posts.slice(
     page * postsPerPage,

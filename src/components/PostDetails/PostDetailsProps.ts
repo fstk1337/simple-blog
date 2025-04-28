@@ -1,5 +1,5 @@
 export interface PostDetailsProps {
-  author: string;
+  author: string | undefined;
   date: string;
   comments: number;
 }
