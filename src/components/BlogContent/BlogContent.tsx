@@ -14,7 +14,7 @@ export const BlogContent = () => {
   const query = useQuery({ queryKey: ['cards'], queryFn: postCardsApi.getPostCards});
   
   const [page, setPage] = useState(0);
-  const posts = query.data || [];
+  const posts = query.data?.filter(card => card.published) || [];
   const postsPerPage = 6;
   const totalPages = Math.ceil(posts.length / postsPerPage);
 

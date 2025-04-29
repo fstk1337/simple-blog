@@ -28,7 +28,7 @@ export const PostCard:FC<PostCardProps> = ({ card, isShort }) => {
         <div className={style.postText}>
           <div className={style.topic}>{query.data?.category.name}</div>
           <a href="#"><h3 className={style.title}>{title}</h3></a>
-          <PostDetails author={query.data?.author.name} date={formatDate(createdAt)} comments={0} />
+          <PostDetails author={query.data?.author.name} date={formatDate(createdAt)} comments={query.data?.comments.length || 0} />
         </div>
         <div className={style.postDescription}>
           <div className={isShort ? style.shortened : undefined}>{parse(content)}</div>
