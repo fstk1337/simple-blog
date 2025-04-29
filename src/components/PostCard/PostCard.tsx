@@ -4,6 +4,7 @@ import { PostDetails } from '@components/PostDetails';
 
 import { useQuery } from '@tanstack/react-query';
 import { postCardsApi } from '@app/api/post-cards';
+import { apiTags } from '@app/api/tags';
 
 import { PostCardProps } from './PostCardProps';
 import style from './PostCard.module.scss';
@@ -18,6 +19,7 @@ const BASE_URL = 'http://localhost:3000';
 export const PostCard:FC<PostCardProps> = ({ card, isShort }) => {
   const { id, title, content, image, createdAt } = card;
   const query = useQuery({ queryKey: ['onePost', id], queryFn: () => postCardsApi.getOnePostById(id)});
+  const query2 = useQuery({ queryKey: ['allTags'], queryFn: apiTags.getAllTags});
 
   return (
     <div className={style.postCard}>
@@ -34,9 +36,12 @@ export const PostCard:FC<PostCardProps> = ({ card, isShort }) => {
           <div className={isShort ? style.shortened : undefined}>{parse(content)}</div>
         </div>
         <div className={style.postTags}>
-          <img src={tagsIcon} alt='tags' />
-          <a href="#">{'tag1'}</a>,&nbsp;
-          <a href="#">{'tag2'}</a>
+          {query.data?.tags.map(tag =>
+          <div key={tag.tagId}>
+            <img src={tagsIcon} alt='tag' />
+            <a href="#">{query2.data?.find(t => t.id == tag.tagId).name}</a>
+          </div>
+          )}
         </div>
       </div>
     </div>
