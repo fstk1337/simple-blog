@@ -4,7 +4,7 @@ import { PostDetails } from '@components/PostDetails';
 
 import { useQuery } from '@tanstack/react-query';
 import { postCardsApi } from '@app/api/post-cards';
-import { apiTags } from '@app/api/tags';
+import { tagsApi } from '@app/api/tags';
 
 import { PostCardProps } from './PostCardProps';
 import style from './PostCard.module.scss';
@@ -16,10 +16,10 @@ import { formatDate } from '@utils/date-formatter';
 const BASE_URL = 'http://localhost:3000';
 
 
-export const PostCard:FC<PostCardProps> = ({ card, isShort }) => {
+export const PostCard:FC<PostCardProps> = ({ card }) => {
   const { id, title, content, image, createdAt } = card;
   const query = useQuery({ queryKey: ['onePost', id], queryFn: () => postCardsApi.getOnePostById(id)});
-  const query2 = useQuery({ queryKey: ['allTags'], queryFn: apiTags.getAllTags});
+  const query2 = useQuery({ queryKey: ['allTags'], queryFn: tagsApi.getAllTags});
 
   return (
     <div className={style.postCard}>
@@ -33,7 +33,7 @@ export const PostCard:FC<PostCardProps> = ({ card, isShort }) => {
           <PostDetails author={query.data?.author.name} date={formatDate(createdAt)} comments={query.data?.comments.length || 0} />
         </div>
         <div className={style.postDescription}>
-          <div className={isShort ? style.shortened : undefined}>{parse(content)}</div>
+          <div className={style.shortened}>{parse(content)}</div>
         </div>
         <div className={style.postTags}>
           {query.data?.tags.map(tag =>
