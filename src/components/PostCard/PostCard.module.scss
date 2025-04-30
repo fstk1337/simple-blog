@@ -67,6 +67,8 @@
   padding-bottom: 25px;
   border-bottom: 1px solid #eee;
   border-top: 1px solid #eee;
+  max-width: 500px;
+  text-align: justify;
   & div.shortened {
     display: -webkit-box;
     overflow: hidden;

@@ -4,7 +4,7 @@ import { Welcome } from "@components/Welcome";
 export const AboutPage = () => {
   return (
     <main>
-      <Welcome heading='About us' text='More about us!' />
+      <Welcome heading='About me' text='Some personal information' />
       <AboutContent />
     </main>
   );

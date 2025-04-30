@@ -18,7 +18,7 @@ export const HomeContent = () => {
       <Container>
         <div className={style.content}>
           <div className={style.mainColumn}>
-            {query.data?.filter(card => card.published).map(card =>
+            {query.data?.filter(card => card.published).slice(0, 3).map(card =>
               <PostCard key={card.id} card={card} isShort={true} />
             )}
             <Link to="/blog" className={style.viewPostsBtn}>View all posts</Link>

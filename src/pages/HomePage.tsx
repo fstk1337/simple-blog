@@ -1,10 +1,10 @@
 import { HomeContent } from "@components/HomeContent";
-import { PostSlider } from "@components/PostSlider";
+import { Welcome } from "@components/Welcome";
 
 export const HomePage = () => {
   return (
     <main>
-      <PostSlider />
+      <Welcome heading='Just a space' text='Not a special stuff here' />
       <HomeContent />
     </main>
   );
