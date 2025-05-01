@@ -18,9 +18,11 @@ export const HomeContent = () => {
       <Container>
         <div className={style.content}>
           <div className={style.mainColumn}>
-            {posts.data?.filter(card => card.published).slice(0, 3).map(card =>
-              <PostCard key={card.id} card={card} isShort={true} />
-            )}
+            <div className={style.posts}>{posts.data?.filter(card => card.published).slice(0, 4).map(card =>
+              <div key={card.id} className={style.cardWrapper}>
+                <PostCard card={card} isShort={true} />
+              </div>)}
+            </div>
             <Link to="/blog" className={style.viewPostsBtn}>View all posts</Link>
           </div>
           <div className={style.sideColumn}>

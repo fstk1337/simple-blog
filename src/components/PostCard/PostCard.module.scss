@@ -62,12 +62,13 @@
 }
 
 .postDescription {
+  display: flex;
+  justify-content: flex-start;
   margin: 25px 0;
   padding: 25px 0;
   padding-bottom: 25px;
   border-bottom: 1px solid #eee;
   border-top: 1px solid #eee;
-  max-width: 500px;
   text-align: justify;
   & div.shortened {
     display: -webkit-box;
@@ -76,6 +77,9 @@
     text-overflow: ellipsis;
     -webkit-line-clamp: 3;
     line-clamp: 3;
+    @media screen and (min-width: 1920px) {
+      max-width: 500px;
+    }
   }
 }
 

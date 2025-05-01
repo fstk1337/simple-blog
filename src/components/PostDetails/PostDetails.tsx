@@ -12,7 +12,7 @@ export const PostDetails:FC<PostDetailsProps> = ({ author, date, comments }) => 
       <div className={style.date}>
         <a href="#">{date}</a>
       </div>
-      <div>
+      <div className={style.comments}>
         <a href="#">{comments} Comments</a>
       </div>
     </div>

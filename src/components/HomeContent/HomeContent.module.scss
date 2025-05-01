@@ -11,13 +11,35 @@
   margin-right: -15px;
   @media screen and (min-width: 992px) {
     flex-direction: row;
+    justify-content: space-between;
   }
 }
 
 .mainColumn {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 0 15px;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  column-gap: 30px;
+  @media screen and (min-width: 1920px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 80px;
+  }
+}
+
+.cardWrapper {
+  display: block;
+  max-width: auto;
+  @media screen and (min-width: 1920px) {
+    // max-width: 680px;
+    max-width: 580px;
+  }
 }
 
 .viewPostsBtn {
