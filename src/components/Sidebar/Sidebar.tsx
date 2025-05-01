@@ -1,6 +1,6 @@
 import { categoriesApi } from '@app/api/categories';
 import { tagsApi } from '@app/api/tags';
-import { postCardsApi } from '@app/api/post-cards';
+import { postsApi } from '@app/api/posts';
 import { useQuery } from '@tanstack/react-query';
 
 import { formatDate } from '@utils/date-formatter';
@@ -10,7 +10,7 @@ import style from './Sidebar.module.scss';
 export const Sidebar = () => {
   const categories = useQuery({ queryKey: ['categories', 'all'], queryFn: categoriesApi.getAllCategories});
   const tags = useQuery({ queryKey: ['tags', 'all'], queryFn: tagsApi.getAllTags});
-  const posts = useQuery({ queryKey: ['posts', 'all'], queryFn: postCardsApi.getPostCards});
+  const posts = useQuery({ queryKey: ['posts', 'all'], queryFn: postsApi.getAllPosts});
 
   return (
     <div className={style.sidebar}>
@@ -23,7 +23,7 @@ export const Sidebar = () => {
         </div>
         <div className={style.sidebarContent}>
           <ul className={style.sidebarPostList}>
-            {posts.data?.filter(post => post.published).sort((a, b) => a.createdAt < b.createdAt).slice(0, 3).map(post =>
+            {posts.data?.filter(post => post.published).sort((a, b) => new Date(a.createdAt).getMilliseconds() - new Date(b.createdAt).getMilliseconds()).slice(0, 3).map(post =>
               <li key={post.id} className={style.sidebarPostItem}>
                 <a href="#"><h4 className={style.postHeading}>{post.title}</h4></a>
                 <div className={style.postDate}>{formatDate(post.createdAt)}</div>

@@ -7,11 +7,11 @@ import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 
 import { useQuery } from '@tanstack/react-query';
-import { postCardsApi } from '@app/api/post-cards';
+import { postsApi } from '@app/api/posts';
 
 
 export const BlogContent = () => {
-  const query = useQuery({ queryKey: ['cards'], queryFn: postCardsApi.getPostCards});
+  const query = useQuery({ queryKey: ['posts', 'all'], queryFn: postsApi.getAllPosts});
   
   const [page, setPage] = useState(0);
   const posts = query.data?.filter(card => card.published) || [];

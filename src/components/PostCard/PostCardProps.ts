@@ -1,4 +1,4 @@
-import { PostDto } from "@app/api/post-cards";
+import { PostDto } from "@app/api/posts";
 
 export interface PostCardProps {
   card: PostDto;

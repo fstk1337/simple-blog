@@ -7,18 +7,18 @@ import style from './HomeContent.module.scss';
 import { Link } from 'react-router-dom';
 
 import { useQuery } from '@tanstack/react-query';
-import { postCardsApi } from '@app/api/post-cards';
+import { postsApi } from '@app/api/posts';
 
 
 export const HomeContent = () => {
-  const query = useQuery({ queryKey: ['cards'], queryFn: postCardsApi.getPostCards});
+  const posts = useQuery({ queryKey: ['posts', 'all'], queryFn: postsApi.getAllPosts});
 
   return (
     <section className={style.homeContent}>
       <Container>
         <div className={style.content}>
           <div className={style.mainColumn}>
-            {query.data?.filter(card => card.published).slice(0, 3).map(card =>
+            {posts.data?.filter(card => card.published).slice(0, 3).map(card =>
               <PostCard key={card.id} card={card} isShort={true} />
             )}
             <Link to="/blog" className={style.viewPostsBtn}>View all posts</Link>

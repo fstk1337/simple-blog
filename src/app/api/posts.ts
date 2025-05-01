@@ -50,12 +50,11 @@ export type PostDtoDetailed = PostDto & {
   author: UserDto;
 }
 
-export const postCardsApi = {
-  getPostCards: async() => {
-    return await fetch(`${BASE_URL}/posts`).then(res => res.json() as Promise<PostDto[]>);
+export const postsApi = {
+  getAllPosts: async() => {
+    return fetch(`${BASE_URL}/posts`).then(res => res.json() as Promise<PostDto[]>);
   },
-  getOnePostById: async(id: number) => {
-    return await fetch(`${BASE_URL}/posts/${id}`).then(res => res.json() as Promise<PostDtoDetailed>);
+  getPostById: async(id: number) => {
+    return fetch(`${BASE_URL}/posts/${id}`).then(res => res.json() as Promise<PostDtoDetailed>);
   }
 }
-

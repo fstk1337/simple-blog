@@ -7,7 +7,6 @@ export type TagDto = {
 
 export const tagsApi = {
   getAllTags: async() => {
-    return await fetch(`${BASE_URL}/tags`).then(res => res.json() as Promise<TagDto[]>);
+    return fetch(`${BASE_URL}/tags`).then(res => res.json() as Promise<TagDto[]>);
   }
 }
-
