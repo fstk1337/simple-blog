@@ -25,7 +25,7 @@ export const Header = () => {
               <img src={showBurgerMenu ? close : burger} alt="=" />
             </div>
             {routes.map(link => 
-              <Link key={link.id} to={link.to} className={style.navLink + (path === link.to ? ' ' + style.navLinkActive : '')}>{link.name}</Link>
+              <Link key={link.id} to={link.to} className={style.navLink + (path.startsWith(link.to) ? ' ' + style.navLinkActive : '')}>{link.name}</Link>
             )}
           </nav>
           <div className={style.burgerMenu + (showBurgerMenu ? ' ' + style.show : '')}>

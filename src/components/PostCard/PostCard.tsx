@@ -13,6 +13,7 @@ import tagsIcon from '@icons/tags.svg';
 
 import parse from 'html-react-parser';
 import { formatDate } from '@utils/date-formatter';
+import { Link } from 'react-router-dom';
 
 
 export const PostCard:FC<PostCardProps> = ({ card, isShort }) => {
@@ -29,7 +30,7 @@ export const PostCard:FC<PostCardProps> = ({ card, isShort }) => {
       <div className={style.postInfo}>
         <div className={style.postText}>
           <div className={style.topic}>{post?.category.name}</div>
-          <a href="#"><h3 className={style.title}>{title}</h3></a>
+          <Link to={`/blog/post?id=${id}`}><h3 className={style.title}>{title}</h3></Link>
           <PostDetails author={post?.author.name} date={formatDate(createdAt)} comments={post?.comments.length || 0} />
         </div>
         <div className={style.postDescription}>
@@ -44,7 +45,7 @@ export const PostCard:FC<PostCardProps> = ({ card, isShort }) => {
             </div>
             )}
             </div>
-            <a className={style.readMoreLink} href='#'>Read more...</a>
+            <Link to={`/blog/post?id=${id}`} className={style.readMoreLink}>Read more...</Link>
         </div>
       </div>
     </div>

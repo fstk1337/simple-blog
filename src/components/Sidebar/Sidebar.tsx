@@ -6,6 +6,7 @@ import { useQuery } from '@tanstack/react-query';
 import { formatDate } from '@utils/date-formatter';
 
 import style from './Sidebar.module.scss';
+import { Link } from 'react-router-dom';
 
 export const Sidebar = () => {
   const categories = useQuery({ queryKey: ['categories', 'all'], queryFn: categoriesApi.getAllCategories});
@@ -25,7 +26,7 @@ export const Sidebar = () => {
           <ul className={style.sidebarPostList}>
             {posts.data?.filter(post => post.published).sort((a, b) => new Date(a.createdAt).getMilliseconds() - new Date(b.createdAt).getMilliseconds()).slice(0, 3).map(post =>
               <li key={post.id} className={style.sidebarPostItem}>
-                <a href="#"><h4 className={style.postHeading}>{post.title}</h4></a>
+                <Link to={`/blog/post?id=${post.id}`}><h4 className={style.postHeading}>{post.title}</h4></Link>
                 <div className={style.postDate}>{formatDate(post.createdAt)}</div>
               </li>
             )}

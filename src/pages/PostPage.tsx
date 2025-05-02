@@ -1,5 +1,11 @@
+import { PostContent } from "@components/PostContent";
+import { Welcome } from "@components/Welcome";
+
 export const PostPage = () => {
   return (
-    <main>Post Details</main>
+    <main>
+      <Welcome heading='Cozy post' text='Take your time' />
+      <PostContent />
+    </main>
   );
 }
