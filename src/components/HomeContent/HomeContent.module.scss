@@ -30,11 +30,14 @@
     flex-direction: row;
     flex-wrap: wrap;
     column-gap: 80px;
+    row-gap: 40px;
+    max-width: 1240px;
+    margin-bottom: 40px;
   }
 }
 
 .cardWrapper {
-  display: block;
+  display: flex;
   max-width: auto;
   @media screen and (min-width: 1920px) {
     // max-width: 680px;

@@ -4,9 +4,9 @@
   margin-bottom: 30px;
   transition: all .3s linear;
   border: 1px solid #eee;
-  &:hover {
-    border-color: #f48840;
-  }
+  // &:hover {
+  //   border-color: #f48840;
+  // }
   &:hover > .postImage {
     filter: opacity(70%);
   }
@@ -88,6 +88,31 @@
   font-weight: 400;
   color: #7a7a7a;
   line-height: 30px;
+}
+
+.cardFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.readMoreLink {
+  display: inline-flex;
+  align-self: start;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #f48840;
+  text-decoration: none;
+  transition: all .3s linear;
+  border-radius: 10px;
+  padding: 5px 10px;
+  &:hover {
+    background-color: #f48840;
+    color: #fff;
+  }
 }
 
 .postTags div {

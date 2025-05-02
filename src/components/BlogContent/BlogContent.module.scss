@@ -29,7 +29,7 @@
 }
 
 .cardWrapper {
-  display: block;
+  display: flex;
   max-width: auto;
   @media screen and (min-width: 1200px) {
     max-width: 350px;
