@@ -20,13 +20,13 @@
   content: "|";
 }
 
-.date::after {
-  margin-left: 8px;
-  content: "";
-  @media screen and (min-width: 480px) {
-    content: "|";
-  }
-}
+// .date::after {
+//   margin-left: 8px;
+//   content: "";
+//   @media screen and (min-width: 480px) {
+//     content: "|";
+//   }
+// }
 
 .comments {
   display: none;

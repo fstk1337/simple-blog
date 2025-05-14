@@ -41,7 +41,7 @@ export const Sidebar = () => {
           <ul className={style.sidebarCategoryList}>
             {categories.data?.slice(0, 5).map(category =>
               <li key={category.id} className={style.sidebarCategoryItem}>
-                <a href={'#'}>- {category.name}</a>
+                <Link to={`/blog/category/${category.id}`}>- {category.name}</Link>
               </li>
             )}
           </ul>
@@ -55,7 +55,7 @@ export const Sidebar = () => {
           <ul className={style.sidebarTagList}>
             {tags.data?.map(tag =>
               <li key={tag.id} className={style.sidebarTagItem}>
-                <a href='#' className={style.sidebarTagBtn}>{tag.name}</a>
+                <Link to={`/blog/tag/${tag.id}`} className={style.sidebarTagBtn}>{tag.name}</Link>
               </li>
             )}
           </ul>

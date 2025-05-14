@@ -18,7 +18,22 @@
 .mainColumn {
   display: flex;
   flex-direction: column;
+  width: 100%;
   padding: 0 15px;
+}
+
+.blogHeading {
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #eee;
+  h3 {
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 120%;
+    color: #20232e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
 }
 
 .posts {
@@ -26,6 +41,9 @@
   flex-direction: row;
   flex-wrap: wrap;
   column-gap: 30px;
+  @media screen and (min-width: 1920px) {
+    column-gap: 35px;
+  }
 }
 
 .cardWrapper {
@@ -36,6 +54,9 @@
   }
   @media screen and (min-width: 1440px) {
     max-width: 420px;
+  }
+  @media screen and (min-width: 1920px) {
+    max-width: 440px;
   }
 }
 
