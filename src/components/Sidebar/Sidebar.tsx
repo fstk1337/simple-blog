@@ -15,9 +15,9 @@ export const Sidebar = () => {
 
   return (
     <div className={style.sidebar}>
-      <form className={style.sidebarSearch}>
+      {/* <form className={style.sidebarSearch}>
         <input type="search" placeholder='type to search...' disabled />
-      </form>
+      </form> */}
       <div className={style.sidebarItem}>
         <div className={style.sidebarHeading}>
           <h3>Recent posts</h3>
@@ -26,7 +26,7 @@ export const Sidebar = () => {
           <ul className={style.sidebarPostList}>
             {posts.data?.filter(post => post.published).sort((a, b) => new Date(a.createdAt).getMilliseconds() - new Date(b.createdAt).getMilliseconds()).slice(0, 3).map(post =>
               <li key={post.id} className={style.sidebarPostItem}>
-                <Link to={`/blog/post?id=${post.id}`}><h4 className={style.postHeading}>{post.title}</h4></Link>
+                <Link to={`/blog/${post.id}`}><h4 className={style.postHeading}>{post.title}</h4></Link>
                 <div className={style.postDate}>{formatDate(post.createdAt)}</div>
               </li>
             )}

@@ -11,13 +11,12 @@ import { PostCardProps } from './PostCardProps';
 import style from './PostCard.module.scss';
 import tagsIcon from '@icons/tags.svg';
 
-import parse from 'html-react-parser';
 import { formatDate } from '@utils/date-formatter';
 import { Link } from 'react-router-dom';
 
 
 export const PostCard:FC<PostCardProps> = ({ card, isShort }) => {
-  const { id, title, content, createdAt } = card;
+  const { id, title, description, createdAt } = card;
   const { data: post } = useQuery({ queryKey: ['onePost', id], queryFn: () => postsApi.getPostById(id)});
   const { data: tags } = useQuery({ queryKey: ['allTags'], queryFn: tagsApi.getAllTags});
   // const { data: imageData } = useQuery({ queryKey: ['image', image], queryFn: () => imagesApi.getImage(image, 'post-img')});
@@ -30,11 +29,11 @@ export const PostCard:FC<PostCardProps> = ({ card, isShort }) => {
       <div className={style.postInfo}>
         <div className={style.postText}>
           <div className={style.topic}>{post?.category.name}</div>
-          <Link to={`/blog/post?id=${id}`}><h3 className={style.title}>{title}</h3></Link>
+          <Link to={`/blog/${id}`}><h3 className={style.title}>{title}</h3></Link>
           <PostDetails author={post?.author.name} date={formatDate(createdAt)} comments={post?.comments.length || 0} />
         </div>
         <div className={style.postDescription}>
-          <div className={isShort ? style.shortened : ''}>{parse(content)}</div>
+          <div className={isShort ? style.shortened : ''}>{description}</div>
         </div>
         <div className={style.cardFooter}>
           <div className={style.postTags}>
@@ -45,7 +44,7 @@ export const PostCard:FC<PostCardProps> = ({ card, isShort }) => {
             </div>
             )}
             </div>
-            <Link to={`/blog/post?id=${id}`} className={style.readMoreLink}>Read more...</Link>
+            <Link to={`/blog/${id}`} className={style.readMoreLink}>Read more...</Link>
         </div>
       </div>
     </div>

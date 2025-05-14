@@ -7,6 +7,7 @@ export type PostDto = {
   authorId: number;
   categoryId: number;
   title: string;
+  description: string;
   content: string;
   image: string;
   published: boolean;
@@ -48,6 +49,33 @@ export type PostDtoDetailed = PostDto & {
   tags: TagDto[];
   comments: CommentDto[];
   author: UserDto;
+}
+
+export const emptyPost: PostDtoDetailed = {
+  id: 0,
+  authorId: 0,
+  categoryId: 0,
+  title: "",
+  description: "",
+  content: "",
+  image: "",
+  published: false,
+  createdAt: "",
+  updatedAt: "",
+  category: {
+    id: 0,
+    name: ""
+  },
+  tags: [],
+  comments: [],
+  author: {
+    id: 0,
+    email: '',
+    name: '',
+    age: 0,
+    role: ROLE.USER,
+    image: null
+  }
 }
 
 export const postsApi = {

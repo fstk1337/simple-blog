@@ -62,13 +62,11 @@
   color: #aaa;
 }
 
-.postDescription {
+.postContent {
   display: flex;
   justify-content: flex-start;
   font-size: 15px;
   font-weight: 400;
-  font-style: italic;
-  // color: #7a7a7a;
   line-height: 30px;
   margin: 25px 0;
   padding: 25px 0;
@@ -76,16 +74,11 @@
   border-bottom: 1px solid #eee;
   border-top: 1px solid #eee;
   text-align: justify;
-  & div.shortened {
-    display: -webkit-box;
-    overflow: hidden;
-    -webkit-box-orient: vertical;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-    @media screen and (min-width: 1920px) {
-      max-width: 500px;
-    }
+  @media screen and (min-width: 1920px) {
+    max-width: 500px;
+  }
+  & div>p {
+    margin-bottom: 15px;
   }
 }
 
