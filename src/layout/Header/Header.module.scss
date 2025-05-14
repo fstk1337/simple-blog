@@ -1,0 +1,135 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: #f7f7f7;
+}
+
+.headerContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 0;
+}
+
+.logo {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 900;
+  color: #1e1e1e;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 8px;
+  margin-top: -5px;
+  white-space: nowrap;
+  span {
+    color: #f48840;
+  }
+  span.dot {
+    font-size: 44px;
+  }
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 30px;
+}
+
+.burger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 46px;
+  background-color: #f48840;
+  cursor: pointer;
+  @media screen and (min-width: 992px) {
+    display: none;
+  }
+}
+
+.burger img {
+  width: 16px;
+}
+
+.navLink {
+  display: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #1e1e1e;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  padding: 8px;
+  transition: all .3s linear;
+  &:hover {
+    color: #f48840;
+  }
+  @media screen and (min-width: 992px) {
+    display: inline;
+  }
+}
+
+.navLinkActive {
+  color: #f48840;
+}
+
+.burgerMenu {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100px;
+  width: 100%;
+  max-height: 0;
+  z-index: 999;
+  overflow: hidden;
+  background-color: #fff;
+  transition: max-height .3s ease-in;
+  & ul {
+    margin: 15px 0;
+    list-style: none;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  }
+  @media screen and (min-width: 992px) {
+    display: none;
+  }
+  &.show {
+    max-height: 305px;
+  }
+}
+
+.burgerItem {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #eee;
+}
+
+.burgerLink {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #1e1e1e;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  padding: 15px 0;
+  transition: all .3s linear;
+  &:hover {
+    color: #f48840;
+  }
+}
+
+.burgerLinkActive {
+  color: #f48840;
+}

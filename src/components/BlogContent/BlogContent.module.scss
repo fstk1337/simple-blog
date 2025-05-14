@@ -1,0 +1,89 @@
+.blogContent {
+  display: block;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 120px;
+  padding: 100px 0;
+  margin-left: -15px;
+  margin-right: -15px;
+  @media screen and (min-width: 992px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.mainColumn {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 15px;
+}
+
+.blogHeading {
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #eee;
+  h3 {
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 120%;
+    color: #20232e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
+
+.posts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 30px;
+  @media screen and (min-width: 1920px) {
+    column-gap: 35px;
+  }
+}
+
+.cardWrapper {
+  display: flex;
+  max-width: auto;
+  @media screen and (min-width: 1200px) {
+    max-width: 350px;
+  }
+  @media screen and (min-width: 1440px) {
+    max-width: 420px;
+  }
+  @media screen and (min-width: 1920px) {
+    max-width: 440px;
+  }
+}
+
+.sideColumn {
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+  @media screen and (min-width: 640px) {
+    width: 380px;
+    min-width: 380px;
+  }
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.pagination li {
+  display: inline-block;
+  list-style: none;
+  cursor: pointer;
+}
+
+.paginationBtns {
+  display: flex;
+  flex-direction: row;
+  column-gap: 15px;
+}

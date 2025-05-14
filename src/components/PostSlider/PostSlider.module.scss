@@ -1,0 +1,12 @@
+.postSlider {
+  display: block;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 10px;
+}
