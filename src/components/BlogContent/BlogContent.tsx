@@ -11,6 +11,7 @@ import { postsApi } from '@app/api/posts';
 import { BlogContentProps } from './BlogContentProps';
 import { categoriesApi } from '@app/api/categories';
 import { tagsApi } from '@app/api/tags';
+import { Link } from 'react-router-dom';
 
 
 export const BlogContent:FC<BlogContentProps> = ({ category, tag }) => {
@@ -61,6 +62,7 @@ export const BlogContent:FC<BlogContentProps> = ({ category, tag }) => {
           <div className={style.mainColumn}>
             <div className={style.blogHeading}>
               <h3>{heading}</h3>
+              {(category || tag) && <Link to='/blog'>Show all</Link>}
             </div>
             <div className={style.posts}>{displayPosts}</div>
             <div className={style.pagination}>

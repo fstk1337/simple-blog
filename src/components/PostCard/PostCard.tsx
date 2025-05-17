@@ -40,7 +40,7 @@ export const PostCard:FC<PostCardProps> = ({ card, isShort }) => {
             {post?.tags.map(tag =>
             <div key={tag.tagId}>
               <img src={tagsIcon} alt='tag' />
-              <a href="#">{tags?.find(t => t.id == tag.tagId)?.name}</a>
+              <Link to={`/blog/tag/${tag.tagId}`}>{tags?.find(t => t.id === tag.tagId)?.name}</Link>
             </div>
             )}
             </div>

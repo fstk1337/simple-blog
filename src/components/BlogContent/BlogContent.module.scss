@@ -23,6 +23,9 @@
 }
 
 .blogHeading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   padding-bottom: 15px;
   margin-bottom: 25px;
   border-bottom: 1px solid #eee;
@@ -33,6 +36,21 @@
     color: #20232e;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+  }
+  a {
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 120%;
+    background-color: inherit;
+    color: #f48840;
+    text-transform: uppercase;
+    text-decoration: underline 0.15em #fff;
+    text-underline-offset: 0.2em;
+    transition: text-decoration-color 300ms;
+    letter-spacing: 0.5px;
+    &:hover {
+      text-decoration-color: #f48840;
+    }
   }
 }
 
