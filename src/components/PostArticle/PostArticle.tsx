@@ -11,7 +11,7 @@ import tagsIcon from '@icons/tags.svg';
 import parse from 'html-react-parser';
 
 export const PostArticle:FC<PostArticleProps> = ({ post }) => {
-  const { id, title, content, image, createdAt } = post;
+  const { title, content, image, createdAt } = post;
   const { data: tags } = useQuery({ queryKey: ['allTags'], queryFn: tagsApi.getAllTags});
   const { data: imageData } = useQuery({ queryKey: ['image', image], queryFn: () => imagesApi.getImage(image, 'post-img')});
 
@@ -22,8 +22,12 @@ export const PostArticle:FC<PostArticleProps> = ({ post }) => {
       </div>
       <div className={style.postInfo}>
         <div className={style.postText}>
-          {post.category && <div className={style.topic}>{post.category.name}</div>}
-          <Link to={`/blog/${id}`}><h3 className={style.title}>{title}</h3></Link>
+          {post.category &&
+            <Link to={`/blog/category/${post.category.id}`}>
+              <div className={style.topic}>{post.category.name}</div>
+            </Link>
+          }
+          <h3 className={style.title}>{title}</h3>
           {post.author && <PostDetails author={post.author.name} date={formatDate(createdAt)} comments={post.comments.length || 0} />}
         </div>
         <div className={style.postContent}>

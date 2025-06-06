@@ -28,7 +28,11 @@ export const PostCard:FC<PostCardProps> = ({ card, isShort }) => {
       </div> */}
       <div className={style.postInfo}>
         <div className={style.postText}>
-          <div className={style.topic}>{post?.category.name}</div>
+          {post && 
+            <Link to={`/blog/category/${post.category.id}`}>
+              <div className={style.topic}>{post?.category.name}</div>
+            </Link>
+          }
           <Link to={`/blog/${id}`}><h3 className={style.title}>{title}</h3></Link>
           <PostDetails author={post?.author.name} date={formatDate(createdAt)} comments={post?.comments.length || 0} />
         </div>
