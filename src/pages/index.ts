@@ -3,3 +3,5 @@ export { AboutPage } from './AboutPage';
 export { BlogPage } from './BlogPage';
 export { PostPage } from './PostPage';
 export { ContactPage } from './ContactPage';
+export { LoginPage } from './LoginPage';
+export { AdminPage } from './AdminPage';

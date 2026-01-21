@@ -1,7 +1,7 @@
 import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
 
 import { Layout } from "@layout/Layout";
-import { BlogPage, HomePage, AboutPage, PostPage } from "@pages";
+import { BlogPage, HomePage, AboutPage, PostPage, LoginPage, AdminPage } from "@pages";
 
 
 export const AppRouter = () => {
@@ -15,6 +15,8 @@ export const AppRouter = () => {
         <Route path=":id" element={<PostPage />} />
       </Route>
       <Route path ="about" element={<AboutPage />} />
+      <Route path ="login" element={<LoginPage />} />
+      <Route path ="admin" element={<AdminPage />} />
     </Route>
   ), {
     future: {
